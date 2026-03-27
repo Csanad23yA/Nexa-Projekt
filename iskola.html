@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Innovaschool</title>
+<link rel="stylesheet" href="iskola.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Faster+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Faster+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="hamburger" onclick="menuKapcsolo()">
+        ☰
+    </div>
+    <header class="fejlec">
+        <div class="kontener">
+            
+            <h1 class="faster-one-regular">Nexa</h1>
+    
+            <div class="hamburger" onclick="menuKapcsolo()">
+                ☰
+            </div>
+               
+            <nav class="menu" id="menu">
+                <ul>
+                    <li><a href="bovebben.html">Bővebben</a></li>
+                    <li><a href="#rolunk">Rólunk</a></li>
+                    <li><a href="#kepzesek">Képzések</a></li>
+                    <li><a href="#kapcsolat">Kapcsolat</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+<section class="fokep">
+    <div class="kontener">
+        <h2>Bemutató</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit.</p>
+        <a href="bovebben.html" class="gomb">Bemutatás</a>
+    </div>
+</section>
+
+
+<section class="rolunk" id="rolunk">
+    <div class="kontener">
+        <h2>Rólunk</h2>
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipiscing elit.
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+    </div>
+</section>
+
+
+<section class="kepzesek" id="kepzesek">
+    <div class="kontener">
+
+        <h2>Képzések</h2>
+
+        <div class="kartya-racs">
+
+            <div class="kartya">
+                <h3>Programozás</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+
+            <div class="kartya">
+                <h3>Robotika</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+
+            <div class="kartya">
+                <h3>Ai és Data</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<footer class="lablec" id="kapcsolat">
+
+    <div class="kontener">
+    
+    <div class="lablec-tartalom">
+    
+    <div class="kapcsolat">
+    <h3 style="color:#E3DBBB">Kapcsolat</h3>
+    <p class="masolhato" data-szoveg="Tavasz utca 21, Őrbottyán">
+        &#128235; Tavasz utca 21, Őrbottyán
+        <span class="masolva">Kimásolva!</span>
+    <p class="masolhato" data-szoveg="hegedus.peter.david@gmail.com">
+        &#128231; Email: hegedus.peter.david@gmail.com
+        <span class="masolva">Kimásolva!</span>
+        </p>
+        <p class="masolhato" data-szoveg="+36 20 289 3599">
+            &#128242; Telefon: +36 20 289 3599
+            <span class="masolva">Kimásolva!</span>
+            </p>
+            <div class="masolasi-uzenet" id="masolasiUzenet">
+                ✔ Másolva
+                </div>
+    </div>
+    <hr style="color: rgb(82, 38, 4);">
+    <div class="vedjegy">
+    <p>© Minden jog lefoglalva</p>
+    <p>Designed by FCS</p>
+    </div>
+    
+    </div>
+    
+    </div>
+    
+    </footer>
+    <script>
+        document.querySelectorAll(".kepzes-kartya").forEach(elem=>{
+elem.addEventListener("click", ()=>{
+elem.classList.toggle("aktiv")
+})
+})
+
+        document.querySelectorAll(".masolhato").forEach(elem => {
+
+        elem.addEventListener("click", function(){
+
+        let szoveg = this.dataset.szoveg
+
+        navigator.clipboard.writeText(szoveg)
+
+        let uzenet = document.getElementById("masolasiUzenet")
+
+        uzenet.classList.add("latszik")
+
+        setTimeout(() => {
+        uzenet.classList.remove("latszik")
+        },1500)
+
+})
+
+})
+       
+
+    function menuKapcsolo(){
+    let menu = document.getElementById("menu")
+    menu.classList.toggle("aktiv")
+    }
+
+    function tanarNyitas(elem){
+elem.classList.toggle("aktiv")
+}
+        
+        </script>
+</body>
+</html>
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovaschool - Hálózati Projekt</title>
+    <link rel="stylesheet" href="bovebben.css">
+    <link href="https://fonts.googleapis.com/css2?family=Faster+One&family=Allerta+Stencil&family=Audiowide&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="fejlec">
+    <div class="kontener">
+        <h1 class="faster-one-regular">Nexa</h1>
+        <nav class="menu">
+            <ul>
+                <li><a href="iskola.html">Főoldal</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="tanarok">
+    <div class="kontener">
+        <h2>Hálózati Architektúra</h2>
+        <p style="margin-bottom: 20px;">Nagyszerű Innovatív Géniusz Alakzat projekt</p>
+
+        <div class="kepzes-blokk" style="margin-bottom: 40px; background: rgba(65, 67, 27, 0.05); padding: 20px; border-radius: 15px; border: 2px dashed #41431B;">
+            <h3 style="margin-bottom: 15px;">Hálózati Topológia (Rajz)</h3>
+            <div style="width: 100%; min-height: 200px; display: flex; align-items: center; justify-content: center; background: #eee; border-radius: 10px; overflow: hidden;">
+                <img src="halozati-rajz.png" alt="Hálózati rajz a PPT-ből" style="max-width: 100%; height: auto; display: block;">
+            </div>
+            <p style="margin-top: 10px; font-style: italic; font-size: 0.85rem;">A hálózat vizuális felépítése az első dia alapján</p>
+        </div>
+        
+        <div class="tanar-racs">
+            <div class="tanar-kartya">
+                <h3>Központi Mag</h3>
+                <p>Gerinc hálózat</p>
+                <div class="tanar-kep">
+                    <p style="padding:15px; font-size:0.9rem;">Router, Multilayer Switch és a központi szerverpark elhelyezése.</p>
+                </div>
+            </div>
+
+            <div class="tanar-kartya">
+                <h3>Clusterek</h3>
+                <p>Végponti csoportok</p>
+                <div class="tanar-kep">
+                    <p style="padding:15px; font-size:0.9rem;">Tantermek (1-5), Tanári kar és Adminisztrációs blokkok elkülönítése.</p>
+                </div>
+            </div>
+
+            <div class="tanar-kartya">
+                <h3>VLAN Stratégia</h3>
+                <p>Logikai szegmensek</p>
+                <div class="tanar-kep">
+                    <p style="padding:15px; font-size:0.9rem;">Biztonságos elkülönítés és optimális sávszélesség-kihasználás.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="kepzes-reszletek">
+    <div class="kontener">
+        <h2>VLAN és IP kiosztás</h2>
+        <div class="kepzes-blokk">
+            <table style="width:100%; border-collapse: collapse; background: white; color: #41431B;">
+                <tr style="background: #41431B; color: white;">
+                    <th style="padding:12px; border:1px solid #41431B;">VLAN</th>
+                    <th style="padding:12px; border:1px solid #41431B;">Név</th>
+                    <th style="padding:12px; border:1px solid #41431B;">IP Tartomány</th>
+                </tr>
+                <tr><td style="padding:10px; border:1px solid #ddd;">10</td><td style="padding:10px; border:1px solid #ddd;">Stud</td><td style="padding:10px; border:1px solid #ddd;">10.10.0.0/16</td></tr>
+                <tr><td style="padding:10px; border:1px solid #ddd;">20</td><td style="padding:10px; border:1px solid #ddd;">Teach</td><td style="padding:10px; border:1px solid #ddd;">10.20.0.0/16</td></tr>
+                <tr><td style="padding:10px; border:1px solid #ddd;">30</td><td style="padding:10px; border:1px solid #ddd;">Admin</td><td style="padding:10px; border:1px solid #ddd;">10.30.0.0/16</td></tr>
+                <tr><td style="padding:10px; border:1px solid #ddd;">40</td><td style="padding:10px; border:1px solid #ddd;">Szerver</td><td style="padding:10px; border:1px solid #ddd;">10.40.0.0/16</td></tr>
+                <tr><td style="padding:10px; border:1px solid #ddd;">50</td><td style="padding:10px; border:1px solid #ddd;">PRN</td><td style="padding:10px; border:1px solid #ddd;">10.50.0.0/16</td></tr>
+                <tr><td style="padding:10px; border:1px solid #ddd;">60</td><td style="padding:10px; border:1px solid #ddd;">Guest</td><td style="padding:10px; border:1px solid #ddd;">10.60.0.0/16</td></tr>
+                <tr><td style="padding:10px; border:1px solid #ddd;">99</td><td style="padding:10px; border:1px solid #ddd;">Natív</td><td style="padding:10px; border:1px solid #ddd;">10.99.0.0/16</td></tr>
+            </table>
+        </div>
+    </div>
+</section>
+
+<section class="kepzes-reszletek">
+    <div class="kontener">
+        <h2>Konfigurációs elvek</h2>
+        <div class="kepzes-blokk">
+            <h3>ACL (Biztonság)</h3>
+            <p>• Admin/Tanár: Teljes elérés minden szegmenshez.</p>
+            <p>• Diák: Internet, File-szerver, E-mail és DNS elérés.</p>
+            <p>• Guest: Szigorú izoláció, kizárólag Internet irányú forgalom.</p>
+        </div>
+        <div class="kepzes-blokk">
+            <h3>DHCP & Skálázhatóság</h3>
+            <p>• <strong>Maszk:</strong> /16 (akár 65.534 eszköz számára).</p>
+            <p>• <strong>Kizárás:</strong> Szerver VLAN-ban az első 10 cím fenntartva.</p>
+            <p>• <strong>Gateway:</strong> Egységes 10.x.10.1-es végződés minden szegmensben.</p>
+        </div>
+    </div>
+</section>
+
+<footer class="lablec" id="kapcsolat">
+    <div class="kontener">
+        <div class="lablec-tartalom">
+            <div class="kapcsolat">
+                <h3 style="color:#E3DBBB">Kapcsolat</h3>
+                <p class="masolhato" data-szoveg="hegedus.peter.david@gmail.com">
+                    &#128231; Email: hegedus.peter.david@gmail.com
+                </p>
+                <div class="masolasi-uzenet" id="masolasiUzenet">✔ Másolva</div>
+            </div>
+            <div class="vedjegy">
+                <p>© Minden jog lefoglalva | Designed by FCS</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll(".masolhato").forEach(elem => {
+        elem.addEventListener("click", function(){
+            navigator.clipboard.writeText(this.dataset.szoveg);
+            let uzenet = document.getElementById("masolasiUzenet");
+            uzenet.classList.add("latszik");
+            setTimeout(() => uzenet.classList.remove("latszik"), 1500);
+        });
+    });
+</script>
+
+</body>
+</html>
